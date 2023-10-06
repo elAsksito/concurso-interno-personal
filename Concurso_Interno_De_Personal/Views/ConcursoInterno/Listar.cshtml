@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Concurso_Interno_De_Personal.Models.ConcursoInterno>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("filtro", "")
+        <button>Consulta</button>
+    }
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID Evaluación</th>
+        <th>Orden de Mérito</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Puesto</th>
+        <th>Evaluación de Desempeño</th>
+        <th>Evaluación de Conocimiento</th>
+        <th>Evaluación Curricular</th>
+        <th>Puntaje Entrevista</th>
+        <th>Bonificacion</th>
+        <th>Puntaje Final</th>
+        <th>Resultado</th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.idEva</td>
+        <td>@item.ordenMerito</td>
+        <td>@item.nombres</td>
+        <td>@item.apellidos</td>
+        <td>@item.dni</td>
+        <td>@item.puesto</td>
+        <td>@item.desempenio</td>
+        <td>@item.conocimiento</td>
+        <td>@item.evaCurricular</td>
+        <td>@item.entrevista</td>
+        <td>@item.bonificacion</td>
+        <td>@item.puntajeFinal</td>
+        <td>@item.resultado</td>
+        <td>
+            @Html.ActionLink("Calificar", "Editar", new { id = item.ordenMerito }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Detalles", "Detalles", new { id = item.ordenMerito }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>

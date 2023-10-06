@@ -1,0 +1,58 @@
+﻿@model Concurso_Interno_De_Personal.Models.ConcursoInterno
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Concurso Interno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>ID Evaluación:</dt>
+        <dd>@Html.DisplayFor(model => model.idEva)</dd>
+
+        <dt>Orden Mérito:</dt>
+        <dd>@Html.DisplayFor(model => model.ordenMerito)</dd>
+
+        <dt>Nombres:</dt>
+        <dd>@Html.DisplayFor(model => model.nombres)</dd>
+
+        <dt>Apellidos: </dt>
+        <dd>@Html.DisplayFor(model => model.apellidos)</dd>
+
+        <dt>DNI:</dt>
+        <dd>@Html.DisplayFor(model => model.dni)</dd>
+
+        <dt>Puesto:</dt>
+        <dd>@Html.DisplayFor(model => model.puesto)</dd>
+
+        <dt>Evaluación de Desempeño:</dt>
+        <dd>@Html.DisplayFor(model => model.desempenio)</dd>
+
+        <dt>Evaluación de Conocimiento:</dt>
+        <dd>@Html.DisplayFor(model => model.conocimiento)</dd>
+
+        <dt>Evaluación Curricular:</dt>
+        <dd>@Html.DisplayFor(model => model.evaCurricular)</dd>
+
+        <dt>Puntaje Entrevista:</dt>
+        <dd>@Html.DisplayFor(model => model.entrevista)</dd>
+
+        <dt>Bonificación:</dt>
+        <dd>@Html.DisplayFor(model => model.bonificacion)</dd>
+
+        <dt>Puntaje Final:</dt>
+        <dd>@Html.DisplayFor(model => model.puntajeFinal) </dd>
+
+        <dt>Resultado:</dt>
+        <dd>@Html.DisplayFor(model => model.resultado)</dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Volver", "Listar", null, new { @class = "btn btn-default" })
+</p>
